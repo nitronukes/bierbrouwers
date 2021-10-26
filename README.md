@@ -1,7 +1,7 @@
 # bierbrouwers
 project bierbrouwers dashboard
 
-lars ijntema
+Lars ijntema
 Kevin Kamstra
 Shibin Pan
 Yasser Yussef
