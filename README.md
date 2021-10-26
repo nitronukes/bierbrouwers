@@ -2,6 +2,6 @@
 project bierbrouwers dashboard
 
 lars ijntema
-kevin kamstra
+Kevin Kamstra
 Shibin Pan
 Yasser Yussef
