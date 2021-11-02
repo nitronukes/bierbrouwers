@@ -16,3 +16,37 @@
   position: relative;
   top: 10%;
 }
+#main {
+  background-color: black;   
+  width: 600px;
+  height: 300px;
+  border-radius: 30px;
+}
+h1{
+  color: yellow;
+  background-color: black;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.text {
+  background-color: yellow;
+  color: black;
+  width: 250px;
+  font-weight: bold;
+  font-size: 20px;
+  border:none;
+  text-align: center;
+}
+.text:focus{
+      outline: none;
+}
+.hr {
+  width: 250px;
+  margin-top: 0px !important;
+}
+#sub{
+  width: 250px;
+  height: 30px;
+  background-color: yellow;
+  border: none;
+}
