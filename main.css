@@ -17,7 +17,7 @@
   top: 10%;
 }
 #main {
-  background-color: black;   
+  background-color: rgb(56, 53, 53);   
   width: 600px;
   height: 300px;
   border-radius: 30px;
@@ -30,7 +30,7 @@ h1{
 }
 .text {
   background-color: yellow;
-  color: black;
+  color: rgb(65, 65, 65);
   width: 250px;
   font-weight: bold;
   font-size: 20px;
@@ -40,13 +40,13 @@ h1{
 .text:focus{
       outline: none;
 }
-.hr {
+hr {
   width: 250px;
   margin-top: 0px !important;
 }
 #sub{
   width: 250px;
   height: 30px;
-  background-color: yellow;
+  background-color: rgb(255, 255, 255);
   border: none;
 }

@@ -1,19 +1,53 @@
 <?php
+       $servername = "localhost";
+       $username = "root";
+       $password = "";
+       $dbname = "biermanagement";
+
+       // Create connection
+       $conn = mysqli_connect($servername, $username, $password, $dbname);
+       
+       // Check connection
+       if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error());
+       }
+       echo "Connected successfully";
+
 
   if (isset($_POST)) {
       $un=$_POST['username'];
       $pw=$_POST['password'];
 
-      if ($un=='username' && $pw=='password') {
+      $sql = "SELECT  username, password FROM users where username = 'admin'";
+      $result = mysqli_query($conn, $sql);
+      
+      if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+          echo " - Name: " . $row["username"]. " " . $row["password"]. $pw . "<br>";
+        }
+      } else {
+        echo "0 results";
+      }
+      
+      
+      
+      
+      
+      if ($pw==$row["password"]) {
           header("location:bestel(zakelijk).html");
           exit();
-      }
-      else
-            echo"<script>alert('invalid password')</script>";  
-       
+        }
+        else
+        echo  "<script>alert('invalid password')</script>";  
+        
     }
     else
         echo  "<script>alert('invalid username')</script>";  
+    
+    
+    mysqli_close($conn);
+      
 ?>
 
 
@@ -39,5 +73,10 @@
       </form>
    </div>
 </center>
+
+
+<div id="main2">
+     <h2>wilt u een account maken?</h2>
+      neem dan nu contact met ons op.
 </body>
 </html>
