@@ -57,20 +57,20 @@
 <br>
   <table class="contactf">  
     <td class="cof">
-    <form action="mail.php" method="POST">
-      <p>Bedrijfsnaam:  <input type="text" id="name" name="name" placeholder="Uw bedrijfsnaam" required></p>
-     <p>Naam:  <input type="text" id="name" name="name" placeholder="Uw naam" required></p>
+    <form action="admin(accountmanage).php" method="POST">
+      <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" required></p>
+     <p>Naam:  <input type="text" id="name" name="naam" placeholder="Uw naam" required></p>
      <p>Telefoonnummer: <input type="tel" id="phone" name="telef" placeholder="Uw telefoonnummer" required></p>
      <P>Emailadres: <input type="text" id="email" name="email" placeholder="Uw Emailadres" required></P>
-     <p>Bezorgadres: <input type="text" name="bezorgadres"placeholder="Uw bezorgadres" required></p>
+     <p>Bezorgadres: <input type="text" name="bezorgadres" placeholder="Uw bezorgadres" required></p>
      <p>Postcode: <input type="text" name="bpostcode"placeholder="Uw bezorgpostcode" required></p>
      <p>Factuuradres: <input type="text" name="factuuradres"placeholder="Uw factuuradres" required></p>
      <p>Postcode: <input type="text" name="fpostcode" placeholder="Uw factuurpostcode" required></p>
      <p>..............................................................................................................</p>
-     <p>Username: <input type="text" id="username" placeholder="Uw gebruiksnaam" required></p>
-     Password: <input type="password" id="myInput" placeholder="Uw wachtwoord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+     <p>Username: <input type="text" id="username" name="username" placeholder="Uw gebruiksnaam" required></p>
+     Password: <input type="password" id="myInput" name="password" placeholder="Uw wachtwoord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
      <input type="checkbox" onclick="myFunction()">Show password<br><i>(minimaal een Hoofdletter, kleineletter, en een cijfer, en minimaal 8 karakters)</i>
-    <input type="submit" value="Account aanmaken">
+    <br><input type="submit" value="Account aanmaken" class="btn btn-primary">
      </form>
    </td>
   </table>
