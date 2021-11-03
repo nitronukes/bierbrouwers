@@ -127,3 +127,55 @@ hr {
     margin: 0;
   }
 
+  body{
+    background-color: rgb(226, 228, 231);
+}
+table {
+    width:50%;
+  }
+  
+  table, th, td {
+    border: 3px solid;
+  }
+  
+  th, td {
+    text-align: center;
+    font-family:cursive;
+    font-size:16px;
+  }
+  th {
+    background-color: #00ff15;
+  }
+  caption {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+    font-size:30px;
+    font-weight:bold ;
+  }  
+  .center{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .center1{
+    margin-right: auto;
+  }
+  
+  .contactf {
+    border: 3px solid;
+    margin-right: auto;
+    font-size:small;
+    width: 30%;
+  }
+  .cof {
+    text-align: left;
+    width: 25%;
+  }
+  .contactf, td {
+    border: 3px solid;
+    text-align: center;
+    font-size: medium;
+    
+  }
+  
+  
