@@ -46,7 +46,7 @@ body {
   
   * { box-model: border-box; font-family: 'futura'; }
 
-
+ HEAD
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -97,6 +97,13 @@ hr {
   height: 30px;
   background-color: rgb(255, 255, 255);
   border: none;
+}
+
+#main2 {
+  border: 1px solid;
+  position: absolute;
+  font-weight: 600;
+
 }
 
   .flex-container {
