@@ -5,48 +5,76 @@
        $dbname = "biermanagement";
 
        // Create connection
-       $conn = mysqli_connect($servername, $username, $password, $dbname);
-       
-       // Check connection
-       if (!$conn) {
-         die("Connection failed: " . mysqli_connect_error());
-       }
-       echo "Connected successfully";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
 
 
   if (isset($_POST)) {
       $un=$_POST['username'];
       $pw=$_POST['password'];
 
-      $sql = "SELECT  username, password FROM users where username = 'admin'";
-      $result = mysqli_query($conn, $sql);
-      
-      if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-          echo " - Name: " . $row["username"]. " " . $row["password"]. $pw . "<br>";
-        }
-      } else {
-        echo "0 results";
-      }
-      
-      
-      
-      
-      
-      if ($pw==$row["password"]) {
-          header("location:bestel(zakelijk).html");
+
+      $sql = "SELECT `username`, `password` FROM `users` WHERE `username` = '".$un."' AND `password` = '".$pw."'";
+      $result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // succes   if ($pw==$row["password"]) {
+         header("location:bestel(zakelijk).html");
           exit();
-        }
-        else
-        echo  "<script>alert('invalid password')</script>";  
+         }
+} else {
+  // failed  
+  
+       echo  "<script>alert('invalid password/username')</script>";  
         
-    }
-    else
-        echo  "<script>alert('invalid username')</script>";  
+      
+    
+}
+$conn->close();
+
+
+
+      
+    //     $result = mysqli_($conn, 'SELECT * FROM `users');
+    //     $result = mysqli_fetch_assoc($result)
+    //    print_r($result);
+    //    echo 'hoihoi';
+    // $stmt = $conn->prepare($sql);
+    // $stmt->bind_param('ss', $un, $pw);
+    // $stmt->execute();
+    // $stmt = $stmt->get_results();
+    // echo $stmt->error;
+      
+    //   if (mysqli_num_rows($result) > 0) {
+    //     // output data of each row
+    //     while($row = mysqli_fetch_assoc($result)) {
+    //         echo " - Name: " . $row["username"]. " " . $row["password"].  "<br>";
+    //     }
+    //    else {
+    //     echo "0 results";
+    //   }
+      
+      
+      
+      
+    //   if ($pw==$row["password"]) {
+    //       header("location:bestel(zakelijk).html");
+    //       exit();
+    //     }
+    //     else {
+    //     echo  "<script>alert('invalid password')</script>";  
+        
+    // }
+    // else
+    //     echo  "<script>alert('invalid username')</script>";  
     
     
-    mysqli_close($conn);
+    // mysqli_close($conn);
       
 ?>
 
