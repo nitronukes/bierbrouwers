@@ -44,7 +44,7 @@ body {
     }
  
   
-  * { box-model: border-box; font-family: 'futura'; }
+  * {-ms-ime-mode: border-box; font-family: 'futura'; }
 
  HEAD
 .flex-container {
@@ -103,6 +103,7 @@ hr {
   border: 1px solid;
   position: absolute;
   font-weight: 600;
+  text-align: center;
 
 }
 

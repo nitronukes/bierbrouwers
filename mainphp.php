@@ -22,18 +22,21 @@ if ($conn->connect_error) {
       $sql = "SELECT `username`, `password` FROM `users` WHERE `username` = '".$un."' AND `password` = '".$pw."'";
       $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-  // succes   if ($pw==$row["password"]) {
-         header("location:bestel(zakelijk).html");
-          exit();
-         }
-} else {
-  // failed  
-  
-       echo  "<script>alert('invalid password/username')</script>";  
-        
-      
+    if ($result->num_rows > 0) {
+    // succes   if ($pw==$row["password"]) {
+            
+            header("location:zakelijk(orderoverzicht).html");
+            exit();
+            
+    }
+    else{
+    // failed  
     
+        echo  "<script>alert('invalid password/username')</script>";  
+            
+        
+        
+    }
 }
 $conn->close();
 
@@ -97,14 +100,14 @@ $conn->close();
             placeholder="username"><br><hr><br>
             <input type="password" name="password" class="text" required 
             placeholder="password"><br><hr><br>
-            <input type="Submit" name="submit" id="sub"> 
+            <input type="submit" name="submit" id="sub"> 
       </form>
-   </div>
-</center>
+  
 
-
-<div id="main2">
-     <h2>wilt u een account maken?</h2>
-      neem dan nu contact met ons op.
+        <h2>wilt u een account maken?</h2>
+    
+        neem dan nu contact met ons op de email banditappletje@gmail.com of bel ons 0611264386
+    </center>
+    </div>
 </body>
 </html>
