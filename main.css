@@ -44,13 +44,16 @@ body {
     }
  
   
+
   * {-ms-ime-mode: border-box; font-family: 'futura'; }
+ * { mask-mode: border-box; font-family: 'futura'; }
 
  HEAD
 .flex-container {
   display: flex;
   flex-direction: column;
-  background-color: DodgerBlue;
+  background-position:unset;
+  width:40%;
  
 }
 
@@ -135,3 +138,159 @@ hr {
     margin: 0;
   }
 
+  body{
+    background-color: rgb(226, 228, 231);
+}
+table {
+    width:50%;
+  }
+  
+  table, th, td {
+    border: 3px solid;
+  }
+  
+  th, td {
+    text-align: center;
+    font-family:cursive;
+    font-size:16px;
+  }
+  th {
+    background-color: #00ff15;
+  }
+  caption {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+    font-size:30px;
+    font-weight:bold ;
+  }  
+  .center{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .center1{
+    margin-right: auto;
+  }
+  
+  .contactf {
+    border: 3px solid;
+    margin-right: auto;
+    font-size:small;
+    width: 30%;
+  }
+  .cof {
+    text-align: left;
+    width: 25%;
+  }
+  .contactf, td {
+    border: 3px solid;
+    text-align: center;
+    font-size: medium;
+    
+  }
+  input.button1{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+  }
+  input.button1:hover{
+    background-color:#4095c6;
+  }
+
+  .login-button {
+    text-align: right;
+    background: #ff5722;
+    border-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    
+    }
+    
+    
+    .container1 {
+      border-radius: 5px;
+      width: 50%;
+      border-style: solid;
+      margin: 10px;
+      width: 47%;
+      float: left;
+    }
+    
+    
+    #besimg {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: solid;
+      border-radius: 5px;
+      margin: 10px;
+      vertical-align: middle;
+    }
+    
+    #pp {
+      margin-left: 10px;
+    }
+    
+    .prijs {
+      font-size: 20px;
+      display: inline-block;
+    }
+    
+    .table {
+      float: right;
+      border: 3px solid;
+      border-radius: 5px;
+      width: auto;
+      margin: auto 40px 40px 40px;
+    }
+    
+    th, td{
+      padding: 10px;
+      text-align: center;
+      border: 3px solid;
+    }
+    
+    .container2 {
+      border-radius: 5px;
+      border-style: solid;
+      margin: 10px;
+      float: left;
+      width: 50%;
+    }
+    
+    .container3 {
+      border-radius: 5px;
+      width: 50%;
+      border-style: solid;
+      margin: 10px;
+      width: 45%;
+      float: right;
+      padding: 10px;
+    }
+    
+    .sub {
+    background: #ff5722;
+    border-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    }
+    
+    
+
+  @media all and (max-width:30em){
+    input.button1{
+      display:block;
+      margin:0.2em auto;
+    }
+  }
+  
+  
