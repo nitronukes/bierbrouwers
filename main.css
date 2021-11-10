@@ -207,12 +207,14 @@ table {
   }
 
   .login-button {
-    text-align: right;
-    background: #ff5722;
-    border-color: transparent;
-    color: #fff;
-    font-weight: bold;
-    
+    text-align: right;    
+    }
+
+    #loginb {
+      background: #ff5722;
+      border-color: transparent;
+      color: #fff;
+      font-weight: bold;  
     }
     
     
