@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 
     </nav>
   </header>
-  <a href="admin(orderoverzicht).html"><button>Dashboard</button></a>
+  <a href="admin(orderoverzicht).php"><button>Dashboard</button></a>
   <table class="center1">
     <caption>Klanten</caption>
     <div>
