@@ -11,12 +11,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
-
-
   if (isset($_POST)) {
       $un=$_POST['username'];
       $pw=$_POST['password'];
+      
       if($un=='Admin' AND $pw=='Admin123'){
         header("location:admin(orderoverzicht).php");
         exit();    
@@ -28,14 +26,14 @@ if ($conn->connect_error) {
     if ($result->num_rows > 0) {
     // succes   if ($pw==$row["password"]) {
             
-            header("location:zakelijk(orderoverzicht).html");
+            header("location:bestel(zakelijk).html");
             exit();
             
     }
     else{
     // failed  
     
-        echo  "<script>alert('invalid password/username')</script>";  
+        echo  "<script>alert('gebruiksnaam en wachtwoord kloppen niet, Probeer opnieuw')</script>";  
             
         
         
