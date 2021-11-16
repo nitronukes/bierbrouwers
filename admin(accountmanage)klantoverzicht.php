@@ -1,18 +1,12 @@
-<?php
-include 'conn.php';
-
-$sql=" SELECT * FROM adminaccountmanage";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <link rel="stylesheet" href="main.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin(accountmanage)</title>
-  <link rel="stylesheet" href="main.css">
+  
 </head>
 <body>
   <header>
@@ -20,49 +14,55 @@ $result = $conn->query($sql);
 
     </nav>
   </header>
-  <a href="admin(orderoverzicht).php"><button>Dashboard</button></a>
+  <a href="admin(orderoverzicht).php"><button>Orderoverzicht</button></a>
   <table class="center1">
-    <caption>Klanten</caption>
-    <div>
+    <caption>Klantenoverzicht</caption>
+    <tr>
+        <th>Bedrijfsnaam</th>
+        <th>Naam</th>
+        <th>telnr</th>
+        <th>Emailadres</th>
+        <th>adres</th>
+        <th>postcode</th>
+        <th>Username</th>
+        <th>Wijzigen/Verwijderen</th>
+        </tr>
+<?php
+include("conn.php");
+error_reporting(0);
+$query= "select * from adminaccountmanage";
+$data = mysqli_query($conn,$query);
+$total = mysqli_num_rows($data);
+
+if($total!=0){
+    while($result=mysqli_fetch_assoc($data)){
+        echo "
         <tr>
-            <th>Bedrijfsnaam</th>
-            <th>Naam</th>
-            <th>telnr</th>
-            <th>Emailadres</th>
-            <th>adres</th>
-            <th>postcode</th>
-            <th>Username</th>
-            </tr>
-<?php
-if($result->num_rows >0){
-while($row = $result->fetch_assoc()){
-?>
-<tr>
-    <td><?php echo $row['bedrijfsnaam']; ?></td>
-    <td><?php echo $row['naam']; ?></td>
-    <td><?php echo $row['telef']; ?></td>
-    <td><?php echo $row['email']; ?></td>
-    <td><?php echo $row['bezorgadres']; ?></td>
-    <td><?php echo $row['bpostcode']; ?></td>
-    <td><?php echo $row['username']; ?></td>
-</tr>
-<?php
-}
-}
-else{
-?>
-<tr>
-<th colspan="2">Er is geen data gevonden!!!</th>
-</tr>
-<?php
+        <td>".$result['bedrijfsnaam']."</td>
+        <td>".$result['naam']."</td>
+        <td>".$result['telef']."</td>
+        <td>".$result['email']."</td>
+        <td>".$result['bezorgadres']."</td>
+        <td>".$result['bpostcode']."</td>
+        <td>".$result['username']."</td>
+        <td><a href='delete.php?un=$result[username]'>verwijderen</td>
+        </tr>
+        ";
+    }
+}else{
+    echo "
+    <tr>
+    <th colspan='2'>Er is geen data gevonden!!!</th>
+    </tr>
+    ";
 }
 ?>
 </table>
 <br>
-  <table class="contactf">  
+  <table style="float: right; width: 20%;">
     <td class="cof">
     <form action="admin(accountmanage)klantenmaken.php" method="POST">
-      <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" required></p>
+     <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" required></p>
      <p>Naam:  <input type="text" id="name" name="naam" placeholder="Uw naam" required></p>
      <p>Telefoonnummer: <input type="tel" id="phone" name="telef" placeholder="Uw telefoonnummer" required></p>
      <P>Emailadres: <input type="text" id="email" name="email" placeholder="Uw Emailadres" required></P>
@@ -77,23 +77,11 @@ else{
     <br><input type="submit" value="Account aanmaken" class="button1">
      </form>
    </td>
-  </table>
+</table>
 
-<footer>
-  <div class="container">
-    
-  </div>
-</footer>
   
 </body>
 <script>
-function toogleInput(e) {
-  var list = document.getElementsByClassName('passwords');
-  for (let item of list) {
-    item.type = e.checked ? 'text' : 'password';
-  }
-}
-
 function myFunction() {
   var x = document.getElementById("myInput");
   if (x.type === "password") {
