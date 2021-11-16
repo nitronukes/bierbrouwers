@@ -15,7 +15,7 @@ if ($conn->connect_error) {
       $un=$_POST['username'];
       $pw=$_POST['password'];
       
-      if($un=='Admin' AND $pw=='Admin123'){
+      if($un=='Admin' AND $pw=='Admin'){
         header("location:admin(orderoverzicht).php");
         exit();    
     }
