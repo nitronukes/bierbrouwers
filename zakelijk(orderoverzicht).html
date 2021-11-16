@@ -15,7 +15,7 @@
     </nav>
   </header>
  
-  <!-- 
+  
 
 
    
@@ -71,11 +71,126 @@
   </table>
 </div>
 </body>
--->
 
-<div class="tim">
-    <h2>Tim</h2>
+<div class="container1">
+    <h1>appel Bandit</h1>
+  <img src="https://media.foox.nl/FT/AFB/high/35033.jpg" id="besimg">
+
+    <p class="prijs">€1.75 per fles <strong>excl BTW.</strong></p>
+    <p id="pp"><strong>Max 24</strong> flesjes per order <input type="number" name="aantal" placeholder="aantal" min="1" max="24" required></P>
+       
+</div>
+<div class="table">
+    <table>
+      <tr>
+        <th>Omschrijving</th>
+        <th>datum</th>
+        <th>Aantal</th>
+        <th>prijs</th>
+        <th>status</th>
+      </tr>
+    
+      <tr>
+        <td>Apple Bandit</td>
+        <td>16-11-2021</td>
+        <td>70</td>
+        <td>€1.75</td>
+        <td>verzonden</td>
+      </tr>
+    </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+     <div class="container2">
+            <h1 id="pp">Bezorgkosten</h1>
+            <p id="pp">Onder de €25 = €7.50</p>
+            <p id="pp">Vanaf €25 = €5.00</p>
+            <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body style="text-align:center">
+
+
+
+<div class="popup" onclick="myFunction()"> <button type="submit">Bestel</button>
+      <span class="popuptext" id="myPopup">A Simple Popup!</span>
 </div>
 
+<script>
+
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
+
+          </div>
+          <!DOCTYPE html>
+
+
+   
 
 
