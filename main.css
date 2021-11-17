@@ -128,6 +128,11 @@ hr {
     font-size: 30px;
     
   }
+  .table{
+    justify-content: center;
+    width: fit-content;
+    height:fit-content;
+  }
   .empty{
     justify-content: center;
     width: fit-content;
