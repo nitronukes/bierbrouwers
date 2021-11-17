@@ -97,7 +97,7 @@
   <input name="telef" type="tel" class="formc" placeholder="Uw Telefoonnummer" required>
   <br><br>
   <input name="aantal" value="<?php echo $aantal;?>" hidden>
-  <input name="totaal" value="<?php echo $totaal;?>" hidden>
+  <input name="totaal" value="<?php echo round($totaal, 2);?>" hidden>
   <button type="submit" class="sub" value="Bestel">BESTEL</button>
 </form>
 </div>

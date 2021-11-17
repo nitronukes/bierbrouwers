@@ -119,10 +119,11 @@ hr {
   
   .flex-container > div {
     background-color: #f1f1f1;
-    width: 75%;
-    height: auto;
+    text-size-adjust:inherit;
+    width: fit-content;
+    height: fit-content;
     margin: 10px;
-    text-align: center;
+    text-align: inherit;
     line-height: 75px;
     font-size: 30px;
   }
@@ -294,6 +295,7 @@ table {
       margin:0.2em auto;
     }
   }
+
   
   
 
@@ -388,3 +390,4 @@ li.NAV a:active, .knop:active {
   color: #999900;
   transition: 0.3s ease-out;
 }
+

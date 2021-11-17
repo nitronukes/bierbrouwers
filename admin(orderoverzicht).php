@@ -20,9 +20,9 @@ $result = $conn->query($sql);
 
     </nav>
   </header>
-  <a href="admin(accountmanage)klantoverzicht.php"><button>Dashboard</button></a>
+  <a href="admin(accountmanage)klantoverzicht.php"><button>Klantoverzicht</button></a>
   <table class="center">
-    <caption>Admin</caption>
+    <caption>Orderoverzicht</caption>
     <div>
         <tr>
             <th>Bedrijfsnaam</th>
@@ -35,38 +35,40 @@ $result = $conn->query($sql);
             <th>fpostcode</th>
             <th>Plaats</th>
             <th>Aantal</th>
-            <th>Totaal</th>
-            <th>Situaties</th>
+            <th>Totaalbedrag</th>
             </tr>
 <?php
-if($result->num_rows >0){
-while($row = $result->fetch_assoc()){
-?>
-<tr>
-    <td><?php echo $row['bedrijfsnaam']; ?></td>
-    <td><?php echo $row['naam']; ?></td>
-    <td><?php echo $row['telef']; ?></td>
-    <td><?php echo $row['email']; ?></td>
-    <td><?php echo $row['bezorgadres']; ?></td>
-    <td><?php echo $row['bpostcode']; ?></td>
-    <td><?php echo $row['factuuradres']; ?></td>
-    <td><?php echo $row['fpostcode']; ?></td>
-    <td><?php echo $row['plaats']; ?></td>
-    <td><?php echo $row['aantal']; ?></td>
-    <td><?php echo $row['totaal']; ?></td>
-    <td><button id="btnAdd" onclick="myFunction()"><b>Nieuw</b></button></td>
-</tr>
-<?php
-}
-}
-else{
-?>
-<tr>
-<th colspan="2">Er is geen data gevonden!!!</th>
-</tr>
-<?php
-}
-?>
+include("conn.php");
+error_reporting(0);
+$query= "select * from bestel";
+$data = mysqli_query($conn,$query);
+$total = mysqli_num_rows($data);
+if($total!=0){
+  while($result=mysqli_fetch_assoc($data)){
+      echo "
+      <tr>
+      <td>".$result['bedrijfsnaam']."</td>
+      <td>".$result['naam']."</td>
+      <td>".$result['telef']."</td>
+      <td>".$result['email']."</td>
+      <td>".$result['bezorgadres']."</td>
+      <td>".$result['bpostcode']."</td>
+      <td>".$result['factuuradres']."</td>
+      <td>".$result['fpostcode']."</td>
+      <td>".$result['plaats']."</td>
+      <td>".$result['aantal']."</td>
+      <td>".'€'.$result['totaal']."</td>
+      ";
+  }
+    }else{
+      echo "
+      <tr>
+      <th colspan='2'>Er is geen data gevonden!!!</th>
+      </tr>
+      ";
+  }
+  ?>
+  </table>
 
 
 <footer>
