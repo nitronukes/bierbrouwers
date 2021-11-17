@@ -126,7 +126,14 @@ hr {
     text-align: inherit;
     line-height: 75px;
     font-size: 30px;
+    
   }
+  .empty{
+    justify-content: center;
+    width: fit-content;
+
+  }
+
   .no-arrow {
     -moz-appearance: textfield;
   }
