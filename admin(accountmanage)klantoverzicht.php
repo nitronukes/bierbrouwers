@@ -22,10 +22,10 @@
         <th>Naam</th>
         <th>telnr</th>
         <th>Emailadres</th>
-        <th>adres</th>
+        <th>Bezorgadres</th>
         <th>postcode</th>
         <th>Username</th>
-        <th>Wijzigen/Verwijderen</th>
+        <th colspan="2" align="center">Wijzigen/Verwijderen</th>
         </tr>
 <?php
 include("conn.php");
@@ -45,7 +45,8 @@ if($total!=0){
         <td>".$result['bezorgadres']."</td>
         <td>".$result['bpostcode']."</td>
         <td>".$result['username']."</td>
-        <td><a href='delete.php?un=$result[username]'>verwijderen</td>
+        <td><a href='update.php?bedrijfsnaam=$result[bedrijfsnaam]&naam=$result[naam]&telef=$result[telef]&email=$result[email]&bezorgadres=$result[bezorgadres]&bpostcode=$result[bpostcode]&username=$result[username]'><input type='submit' value='Wijzigen' id='editbtn'></a></td>
+        <td><a href='delete.php?username=$result[username]' onclick='return checkdelete()'><input type='submit' value='Verwijderen' id='deletebtn'></a></td>
         </tr>
         ";
     }
@@ -89,6 +90,10 @@ function myFunction() {
   } else {
     x.type = "password";
   }
+}
+
+function checkdelete(){
+  return confirm('Weet je zeker dat je deze account willen verwijderen?');
 }
 </script>
 </html>
