@@ -225,14 +225,7 @@ table {
     }
     
     
-    .container1 {
-      border-radius: 5px;
-      width: 50%;
-      border-style: solid;
-      margin: 10px;
-      width: 47%;
-      float: left;
-    }
+    
     
     
     #besimg {
@@ -267,13 +260,23 @@ table {
       text-align: center;
       border: 3px solid;
     }
+    .container1 {
+      border-radius: 5px;
+      width: 50%;
+      border-style: solid;
+      margin: 0 0 0 0;
+      width: 47%;
+      float: left;
+    }
     
     .container2 {
       border-radius: 5px;
-      border-style: solid;
-      margin: 10px;
-      float: left;
       width: 50%;
+      border-style: solid;
+      margin: 40px 50% 0 0;
+      
+      width: 47%;
+      float: left;
     }
     
     .container3 {
