@@ -26,7 +26,7 @@ if ($conn->connect_error) {
     if ($result->num_rows > 0) {
     // succes   if ($pw==$row["password"]) {
             
-            header("location:zakelijk(orderoverzicht).html");
+            header("location:bestel(zakelijk).php");
             exit();
             
     }
