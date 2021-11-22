@@ -98,9 +98,9 @@ $conn->close();
         <h1>login</h1>
         <form method="post" action="">
             <input type="text" name="username" class="text" autocomplete="off" required 
-            placeholder="username"><br><hr><br>
+            placeholder="gebruikersnaam"><br><hr><br>
             <input type="password" name="password" class="text" required 
-            placeholder="password"><br><hr><br>
+            placeholder="wachtwoord"><br><hr><br>
             <input type="submit" name="submit" id="sub"> 
       </form>
   
