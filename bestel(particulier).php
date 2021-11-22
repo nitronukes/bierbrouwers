@@ -15,7 +15,6 @@
   <header>
 
     <div class="login-button">
-
        <a href="mainphp.php"> <button type="submit">Login</button></a>
     </div>
 
@@ -90,6 +89,7 @@
   <label>Plaats:</label> 
   <input name="plaats" type="text" class="formc" placeholder="Uw Plaats" required>
   <br><br>
+  <input type="date" name="datum" id="datePickerId"hidden>
   <label>Emailadres:</label> 
   <input name="email" type="email" class="formc" placeholder="Uw Emailadres" required>
   <br><br>
@@ -103,4 +103,13 @@
 </div>
 
 </body>
+
+<script>
+var date= new Date();
+var year= date.getFullYear();
+var month= date.getMonth()+1;
+var todayDate = String(date.getDate()).padStart(2,'0');
+var datePattern = year + '-' + month + '-' + todayDate;
+document.getElementById("datePickerId").value = datePattern;
+</script>
 </html>
