@@ -125,7 +125,19 @@ hr {
     text-align: center;
     line-height: 75px;
     font-size: 30px;
+    
   }
+  .table{
+    justify-content: center;
+    width: fit-content;
+    height:fit-content;
+  }
+  .empty{
+    justify-content: center;
+    width: fit-content;
+
+  }
+
   .no-arrow {
     -moz-appearance: textfield;
   }
