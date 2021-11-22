@@ -2,15 +2,18 @@
 include("conn.php");
 error_reporting(0);
 
-$username=$_GET[un'];
-$query = "DELETE FROM adminaccountmanage WHERE 'username'='$username'";
+$username= $_GET['username'];
+$query = "DELETE FROM adminaccountmanage WHERE username='$username'";
 
 $data=mysqli_query($conn, $query);
 
 if($data){
-    echo "Account is verwijderd uit Database";
+    echo "<script>alert('Account is verwijderd uit Database')</script>";
+    ?>
+    <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost/test/admin(accountmanage)klantoverzicht.php">
+    <?php
 }else{
-    echo "Het is niet gelukt om account te verwijderen";
+    echo "<script>alert('Het is niet gelukt om account te verwijderen, Probeer later opnieuw')</script>";
 }
 
 ?>
