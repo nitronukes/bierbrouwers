@@ -15,7 +15,6 @@
   <header>
 
     <div class="login-button">
-
        <a href="mainphp.php"> <button type="submit">Login</button></a>
     </div>
 
