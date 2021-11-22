@@ -20,13 +20,13 @@ if ($conn->connect_error) {
         exit();    
     }
 
-      $sql = "SELECT `username`, `password` FROM `users` WHERE `username` = '".$un."' AND `password` = '".$pw."'";
+      $sql = "SELECT `username`, `password` FROM `adminaccountmanage` WHERE `username` = '".$un."' AND `password` = '".$pw."'";
       $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
     // succes   if ($pw==$row["password"]) {
             
-            header("location:zakelijk(.html");
+            header("location:zakelijk(orderoverzicht).html");
             exit();
             
     }
