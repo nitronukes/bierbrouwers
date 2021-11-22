@@ -26,27 +26,33 @@
     <h1>appel Bandit</h1>
   <img src="https://media.foox.nl/FT/AFB/high/35033.jpg" id="besimg">
 
-    <p class="prijs">€1.75 per fles <strong>excl BTW.</strong></p>
-    <p id="pp"><strong>Max 24</strong> flesjes per order <input type="number" name="aantal" placeholder="aantal" min="1" max="24" required></P>
+  <form method="GET"><p id="pp"><input type="number" name="aantal" placeholder="aantal" min="1" max="99999999" required></P>
+  <button type="submit" class="sub" value="Aantal Bevestigen">Aantal Bevestigen</button>
       
 </div>
 <div class="table">
     <table>
-      <tr>
-        <th>Omschrijving</th>
-        <th>datum</th>
-        <th>Aantal</th>
-        <th>prijs</th>
-        <th>status</th>
-      </tr>
+    <tr>
+    <th>Omschrijving</th>
+    <th>Aantal</th>
+    <th>Prijs</th>
+    <th>BTW</th>
+    <th>Bezorgkosten</th>
+    <th>Totaalbedrag</th>
+  </tr>
     
-      <tr>
-        <td>Apple Bandit</td>
-        <td>16-11-2021</td>
-        <td>70</td>
-        <td>€1.75</td>
-        <td>verzonden</td>
-      </tr>
+      <td>Apple Bandit</td>
+    <td><?php $aantal = $_GET['aantal'] ?? '0'; echo $aantal; ?></td>
+    <td>€1.75</td>
+    <td><?php $btw=$aantal * '1.75'* '0.21'; echo round($btw,2); ?></td>
+    <td><?php $subtotaal=$aantal * '1.75'; 
+    if($subtotaal<25){
+      $bk='7.5'; echo '€'.$bk;
+    }elseif($subtotaal>25){
+      $bk='5'; echo '€'.$bk;
+    }?></td>
+    <td><?php $totaal=$subtotaal+$bk+$btw; echo '€'.round($totaal, 2); ?></td>
+  </tr>
       <br>
      
     </table>
@@ -116,7 +122,7 @@
                
 
 </div>
-            <html>
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
