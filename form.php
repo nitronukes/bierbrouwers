@@ -1,18 +1,36 @@
 <?php
 $name= $_POST['name'];
-$adres=  $_POST['adres'];
-$postcode =  $_POST['postcode'];
+$bezorgadres=  $_POST['bezorgadres'];
+$bpostcode =  $_POST['bpostcode'];
 $plaats =  $_POST['plaats'];
-$visitor_email= $_POST['email'];
-$telefoonnummer =  $_POST['telefoonnummer'];
+$datum = $_POST['datum'];
+$email= $_POST['email'];
+$telef =  $_POST['telef'];
+$aantal = $_POST['aantal'];
+$totaal = $_POST['totaal'];
 
-$receiver = "panshibin2000@gmail.com";
+$receiver = array($email, 'banditappletje@gmail.com');
 $subject="bestelling";
-$body = "$name $adres $postcode $plaats $visitor_email $telefoonnummer";
+$body = "Naam= $name \r\nBezorgadres= $bezorgadres \r\nBezorgpostcode= $bpostcode \r\nPlaats= $plaats \r\nDatum= $datum \r\nE mailadres= $email \r\nTelefoonnr= $telef \r\nAantal bier=$aantal \r\nTotaalbedrag=$totaal";
 
-if(mail($receiver, $subject, $body)){
-  echo "bestelling is gelukt";
+if(mail(implode(',',$receiver), $subject, $body)){
+  echo "<script>alert('bestelling is gelukt, We gaan meteen aan de slag met inpakken, U krijgt ook een bevestiging')</script>";
+  ?>
+  <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost/test/bestel(particulier).php">
+  <?php
 }else{
-  echo"Sorry, bestelling is niet gelukt";
+  echo "<script>alert('Sorry, bestelling is niet gelukt')</script>";
 }
+
+
+$conn = new mysqli('localhost','root','','biermanagement');
+      if($conn->connect_error){
+          die('Connection Failed : '.$conn->connect_error);
+      }else{
+          $stmt = $conn->prepare("insert into bestel(naam, telef,email,bezorgadres,bpostcode,datum,plaats,aantal,totaal) values(?,?,?,?,?,?,?,?,?)");
+          $stmt->bind_param("sssssssss",$name,$telef,$email,$bezorgadres,$bpostcode,$datum,$plaats,$aantal,$totaal);
+          $stmt->execute();
+          $stmt->close();
+          $conn->close();
+      }
 ?>
