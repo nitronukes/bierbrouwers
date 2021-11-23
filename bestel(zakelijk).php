@@ -131,7 +131,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=2">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+<body> {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 
