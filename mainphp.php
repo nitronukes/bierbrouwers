@@ -29,8 +29,8 @@
 </html>
 <?php
        $servername = "localhost";
-       $username = "root";
-       $password = "";
+       $username = "deb85590_p21t4";
+       $password = "UtvCWEGA";
        $dbname = "biermanagement";
 
        // Create connection
