@@ -9,12 +9,22 @@
   
 </head>
 <body>
-  <header>
-    <nav>
 
-    </nav>
+<header>
+    <div class="login-button">
+      <a href="mainphp.php"> <button type="submit">loguit</button></a>
+   </div>
+     <div class="NAV">
+      <nav>
+        <ul>
+          <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <a href="admin(orderoverzicht).php"><button>Orderoverzicht</button></a>
+
+
+
   <table class="center1">
     <caption>Klantenoverzicht</caption>
     <tr>
