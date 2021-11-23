@@ -23,7 +23,7 @@ $result = $conn->query($sql);
       <nav>
         <ul>
           <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
-          <li>  <a href="admin(accountmanage)klantenmaken.php">Klantenmaken</a></li>
+          <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
         </ul>
       </nav>
     </div>
@@ -43,6 +43,7 @@ $result = $conn->query($sql);
             <th>bezorgpostcode</th>
             <th>factuuradres</th>
             <th>fpostcode</th>
+            <th>Datum</th>
             <th>Plaats</th>
             <th>Aantal</th>
             <th>Totaalbedrag</th>
@@ -50,7 +51,7 @@ $result = $conn->query($sql);
 <?php
 include("conn.php");
 error_reporting(0);
-$query= "select * from bestel";
+$query= "SELECT * FROM bestel";
 $data = mysqli_query($conn,$query);
 $total = mysqli_num_rows($data);
 if($total!=0){
@@ -65,9 +66,12 @@ if($total!=0){
       <td>".$result['bpostcode']."</td>
       <td>".$result['factuuradres']."</td>
       <td>".$result['fpostcode']."</td>
+      <td>".$result['datum']."</td>
       <td>".$result['plaats']."</td>
       <td>".$result['aantal']."</td>
       <td>".'€'.$result['totaal']."</td>
+      <td><a href='versturen.php?naam=$result[naam]&aantal=$result[aantal]&email=$result[email]&username=$result[username]&datum=$result[datum]' onclick='return checkdelete()'><input type='submit' value='Versturen' id='deletebtn'></a></td>
+      </tr>
       ";
   }
     }else{
@@ -80,13 +84,11 @@ if($total!=0){
   ?>
   </table>
 
-
-<footer>
-  <div class="container">
-    
-  </div>
-</footer>
   
 </body>
-
+<script>
+function checkdelete(){
+  return confirm('Weet je zeker dat je deze bestelling hebt verzonden?');
+}
+</script>
 </html>

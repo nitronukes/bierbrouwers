@@ -1,15 +1,140 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <link rel="stylesheet" href="main.css">
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin(accountmanage)</title>
+  <style>
+    table {
+    width:50%;
+  }
+  table, th, td {
+    border: 3px solid;
+  }
+  .table th, .table td { 
+    text-align: center; 
+    padding: 0.25em;
+    font-size:16px;
+  }
+  th {
+    background-color: yellow;
+  }
+  td.edit-buttons { text-align: right; }
+  button { 
+    border-radius: 3px; 
+    border: none; 
+    margin: 0 0.25em; 
+    transition: all 0.3s;
+  }
   
-</head>
-<body>
+  button:hover { 
+    box-shadow: 0 0 4px rgba(3,3,3,0.8); 
+    opacity: 0.9;
+  }
+  
+  button.edit { background: yellow; }
+  button.delete { background: #F69; }
+  @media screen and (max-width: 800px) {
+    tr { 
+      display: flex; 
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0.5em 0;
+    }
+    td, th {
+      flex: 1 1 150px;
+      border: 0.5px solid rgba(3,3,3,0.2);
+    }
+   
+    }
 
+  * {-ms-ime-mode: border-box; font-family: 'futura'; }
+ * { mask-mode: border-box; font-family: 'futura'; }
+ .cof {
+   position: fixed;
+   text-align: left;
+   width: 30%;
+   font-size:larger;
+  }
+  input.button1{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+  }
+  input.button1:hover{
+    background-color:#4095c6;
+  }
+  #editbtn{
+    background-color:green;
+    color:white;
+    width:120px;
+    height:25px;
+    font-size:18px;
+}
+#deletebtn{
+    background-color:red;
+    color:white;
+    width:120px;
+    height:25px;
+    font-size:18px
+}
+caption {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+    font-size:30px;
+    font-weight:bold ;
+  }  
+  header{
+    background-color: rgb(46, 35, 35);
+  }
+
+ .NAV {
+    position: relative;
+    display: flex;
+  }
+  
+  ul {
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+  }
+  
+nav li {
+  display: inline-flex;
+  margin-right: 50px;
+  margin-left: 100px;
+  margin-bottom: 5px;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+  .login-button {
+  float: right;
+  text-align: center;
+  }  
+  
+  </style>
+</head>
 <header>
     <div class="login-button">
       <a href="mainphp.php"> <button type="submit">loguit</button></a>
@@ -17,15 +142,14 @@
      <div class="NAV">
       <nav>
         <ul>
-          <li><a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
-          <li><a href="admin(accountmanage)klantenmaken.php">Klantenmaken</a></li>
+          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
+          <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
         </ul>
       </nav>
     </div>
-  </header>
-
-
-
+</header>
+<body>
+  
   <table class="center1">
     <caption>Klantenoverzicht</caption>
     <tr>
@@ -58,7 +182,6 @@ if($total!=0){
         <td>".$result['username']."</td>
         <td><a href='update.php?bedrijfsnaam=$result[bedrijfsnaam]&naam=$result[naam]&telef=$result[telef]&email=$result[email]&bezorgadres=$result[bezorgadres]&bpostcode=$result[bpostcode]&username=$result[username]'><input type='submit' value='Wijzigen' id='editbtn'></a></td>
         <td><a href='delete.php?username=$result[username]' onclick='return checkdelete()'><input type='submit' value='Verwijderen' id='deletebtn'></a></td>
-        </tr>
         ";
     }
 }else{
@@ -70,9 +193,9 @@ if($total!=0){
 }
 ?>
 </table>
-<br>
-  <table style="float: right; width: 20%;">
-    <td class="cof">
+
+  <table>
+    <td class="cof" style="right:30px;top:100px">
     <form action="admin(accountmanage)klantenmaken.php" method="POST">
      <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" required></p>
      <p>Naam:  <input type="text" id="name" name="naam" placeholder="Uw naam" required></p>
@@ -82,10 +205,10 @@ if($total!=0){
      <p>Postcode: <input type="text" name="bpostcode"placeholder="Uw bezorgpostcode" required></p>
      <p>Factuuradres: <input type="text" name="factuuradres"placeholder="Uw factuuradres" required></p>
      <p>Postcode: <input type="text" name="fpostcode" placeholder="Uw factuurpostcode" required></p>
-     <p>..............................................................................................................</p>
+     <p>................................................................................................</p>
      <p>Username: <input type="text" id="username" name="username" placeholder="Uw gebruiksnaam" required></p>
      Password: <input type="password" id="myInput" name="password" placeholder="Uw wachtwoord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-     <input type="checkbox" onclick="myFunction()">Show password<br><i>(minimaal een Hoofdletter, kleineletter, en een cijfer, en minimaal 8 karakters)</i>
+     <i><input type="checkbox" onclick="myFunction()">Show password</p><i>(minimaal een Hoofdletter, kleineletter, en een cijfer, en minimaal 8 karakters)</i>
     <br><input type="submit" value="Account aanmaken" class="button1">
      </form>
    </td>
