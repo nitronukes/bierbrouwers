@@ -11,7 +11,7 @@
 <body>
   <header>
     <nav>
-      <button class="open-cheese" onclick="openForm()">account</button>
+     
     </nav>
   </header>
  
@@ -66,7 +66,7 @@
             <p id="pp">Onder de €25 = €7.50</p>
             <p id="pp">Vanaf €25 = €5.00</p>
             
-
+ <button class="open-cheese" onclick="openForm()">account</button>
 <div class="form-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
     <h1>Login</h1>
