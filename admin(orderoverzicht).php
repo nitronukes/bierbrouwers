@@ -14,13 +14,23 @@ $result = $conn->query($sql);
   <title>Admin(accountmanage)</title>
   <link rel="stylesheet" href="main.css">
 </head>
-<body>
-  <header>
-    <nav>
 
-    </nav>
-  </header>
-  <a href="admin(accountmanage)klantoverzicht.php"><button>Klantoverzicht</button></a>
+<header>
+    <div class="login-button">
+      <a href="mainphp.php"> <button type="submit">loguit</button></a>
+   </div>
+     <div class="NAV">
+      <nav>
+        <ul>
+          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
+          <li>  <a href="admin(accountmanage)klantenmaken.php">Klantenmaken</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
+
+<body>
   <table class="center">
     <caption>Orderoverzicht</caption>
     <div>
