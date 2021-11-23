@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="main.css">
 </head>
 
+<body>
+<header>
+    <div class="login-button">
+      <a href="mainphp.php"> <button type="submit">login</button></a>
+</div>
+  </header>
+
+</body>
 
 
 <?php
