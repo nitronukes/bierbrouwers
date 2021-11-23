@@ -225,7 +225,14 @@ table {
     }
     
     
-    
+    .container1 {
+      border-radius: 5px;
+      width: 50%;
+      border-style: solid;
+      margin: 10px;
+      width: 47%;
+      float: left;
+    }
     
     
     #besimg {
@@ -260,23 +267,13 @@ table {
       text-align: center;
       border: 3px solid;
     }
-    .container1 {
-      border-radius: 5px;
-      width: 50%;
-      border-style: solid;
-      margin: 0 0 0 0;
-      width: 47%;
-      float: left;
-        }
     
     .container2 {
       border-radius: 5px;
-      width: 50%;
       border-style: solid;
-      margin: 40px 50% 0 0;
-      
-      width: 47%;
+      margin: 10px;
       float: left;
+      width: 50%;
     }
     
     .container3 {
@@ -310,27 +307,37 @@ table {
   header{
     background-color: rgb(46, 35, 35);
   }
-  .nav {
+
+ .NAV {
     position: relative;
     display: flex;
   }
   
-  nav ul {
+  ul {
     list-style: none;
     text-align: right;
     display: inline-block;
   }
   
-  nav li {
-    display: inline-flex;
-  }
-  
+nav li {
+  display: inline-flex;
+  margin-right: 50px;
+  margin-left: 100px;
+  margin-bottom: 5px;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
   .login-button {
   float: right;
   text-align: center;
   }  
   
-  li.NAV a:active, .knop:active {
-  color: gray;
-  }
-
