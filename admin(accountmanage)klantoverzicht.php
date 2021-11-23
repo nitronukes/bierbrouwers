@@ -96,11 +96,60 @@ caption {
     font-size:30px;
     font-weight:bold ;
   }  
+  header{
+    background-color: rgb(46, 35, 35);
+  }
+
+ .NAV {
+    position: relative;
+    display: flex;
+  }
+  
+  ul {
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+  }
+  
+nav li {
+  display: inline-flex;
+  margin-right: 50px;
+  margin-left: 100px;
+  margin-bottom: 5px;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+  .login-button {
+  float: right;
+  text-align: center;
+  }  
+  
   </style>
 </head>
+<header>
+    <div class="login-button">
+      <a href="mainphp.php"> <button type="submit">loguit</button></a>
+   </div>
+     <div class="NAV">
+      <nav>
+        <ul>
+          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
+          <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
 <body>
   
-  <a href="admin(orderoverzicht).php"><button>Orderoverzicht</button></a>
   <table class="center1">
     <caption>Klantenoverzicht</caption>
     <tr>
@@ -146,7 +195,7 @@ if($total!=0){
 </table>
 
   <table>
-    <td class="cof" style="right:30px;top:70px;">
+    <td class="cof" style="right:30px;top:100px">
     <form action="admin(accountmanage)klantenmaken.php" method="POST">
      <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" required></p>
      <p>Naam:  <input type="text" id="name" name="naam" placeholder="Uw naam" required></p>
