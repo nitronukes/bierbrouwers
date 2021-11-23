@@ -23,7 +23,7 @@ $result = $conn->query($sql);
       <nav>
         <ul>
           <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
-          <li>  <a href="admin(accountmanage)Orderoverzicht.php">Orderoverzicht</a></li>
+          <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
         </ul>
       </nav>
     </div>
