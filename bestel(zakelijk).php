@@ -4,22 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zakelijk(orderoverzicht)</title>
   <link rel="stylesheet" href="main.css">
+  
+<header>
+    <div class="login-button">
+      <a href="mainphp.php"> <button type="submit">loguit</button></a>
+   </div>
+     <div class="NAV">
+      <nav>
+        <ul>
+          <li>  <a href="bestel(zakelijk).php">Bestellen</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
 </head>
-<body>
-  <header>
-    <nav>
-     
-    </nav>
-  </header>
- 
- 
 
+<?php
+include("conn.php");
+error_reporting(0);
+$query= "select * from adminaccountmanage";
+$data = mysqli_query($conn,$query);
+$total = mysqli_num_rows($data);
 
-
-
-
+if($total!=0){
+    while($result=mysqli_fetch_assoc($data)){
+         "
+        <a href='update(zakelijk).php?bedrijfsnaam=$result[bedrijfsnaam]&naam=$result[naam]&telef=$result[telef]&email=$result[email]&bezorgadres=$result[bezorgadres]&bpostcode=$result[bpostcode]&username=$result[username]'>account</a>
+        ";
+    }
+  }
+?>
+<button class="open-cheese" onclick="openForm()">account</button>
 
 <div class="container1">
     <h1>appel Bandit</h1>
@@ -39,8 +56,9 @@
     <th>Bezorgkosten</th>
     <th>Totaalbedrag</th>
   </tr>
-    
-      <td>Apple Bandit</td>
+
+  <tr>
+    <td>Apple Bandit</td>
     <td><?php $aantal = $_GET['aantal'] ?? '0'; echo $aantal; ?></td>
     <td>€1.75</td>
     <td><?php $btw=$aantal * '1.75'* '0.21'; echo round($btw,2); ?></td>
@@ -52,25 +70,43 @@
     }?></td>
     <td><?php $totaal=$subtotaal+$bk+$btw; echo '€'.round($totaal, 2); ?></td>
   </tr>
-      <br>
-     
     </table>
     </div>
     <br>
     <br>
     <br>
     
-     <div class="container2">
-            <h1 id="pp">Bezorgkosten</h1>
-            <p id="pp">Onder de €25 = €7.50</p>
-            <p id="pp">Vanaf €25 = €5.00</p>
-            
- <button class="open-cheese" onclick="openForm()">account</button>
+    <div class="container2">
+      <h1 id="pp">Bezorgkosten</h1>
+      <p id="pp">Onder de €25 = €7.50</p>
+      <p id="pp">Vanaf €25 = €5.00</p>
+    </div>
+    
+    
+    <div class="container3">
+    <button type="submit" class="sub" value="Bestel">BESTEL</button>
+    </div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+</html>
+
+           
+
 <div class="form-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
     <h1>Login</h1>
 
     <div class="cheese">
+      
             <div>
          <div class="table">
            <tr>
@@ -117,7 +153,7 @@
            <class="edit-buttons"><button class="edit">Edit</button><button class="delete">Delete</button></class=>
                </tr>
                <br>
-               <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+               <button type="button" class="pindakaas" onclick="closeForm()">gegevens opslaan</button>
                
 
 </div>
@@ -194,26 +230,20 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-.form-container .cancel {
-  background-color: red;
-  width: 100px;
+.pindakaas{
+  background-color: #ff5722;
 }
 </style>
+
 </head>
 <body>
-
-
-<
-
 <script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
 </script>
+
+
+
+
 
 </body>
 </html>
