@@ -10,7 +10,7 @@
       $username         = $_POST['username'];
       $password         = $_POST['password'];
       
-      $conn = new mysqli('localhost','root','','biermanagement');
+      $conn = new mysqli('localhost','deb85590_p21t4','UtvCWEGA','deb85590_p21t4');
       if($conn->connect_error){
           die('Connection Failed : '.$conn->connect_error);
       }else{
