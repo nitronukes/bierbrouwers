@@ -122,6 +122,7 @@ function closeForm() {
               </tr><br><tr><td
       
                <form> adres:<input type="text" name="adres" id="adres" placeholder="adres" /> 
+               
           
            
                 <class="edit-buttons"><button class="edit">Edit</button><button class="delete">Delete</button></>
