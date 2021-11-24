@@ -37,7 +37,6 @@
        $password = "UtvCWEGA";
        $dbname = "deb85590_p21t4";
 
-
        // Create connection
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
