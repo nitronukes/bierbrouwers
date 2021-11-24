@@ -1,8 +1,8 @@
 <?php
 
-if(isset($_post['loguit'])){
+if(isset($_POST['loguit'])){
   session_destroy();
-  header('location: mainphp.php');
+  header('Location: mainphp.php');
 }
 
 
@@ -26,9 +26,9 @@ $result = $conn->query($sql);
 </head>
 
 <header>
-    <div class="login-button">
-    <button type="submit" name="loguit">loguit</button></a>
-   </div>
+<form method='POST' action=""> 
+ <input type="submit" name="loguit">loguit</input>
+    </form> 
      <div class="NAV">
       <nav>
         <ul>
