@@ -25,7 +25,7 @@
         neem dan nu contact met ons op de email banditappletje@gmail.com of bel ons 0611264386
 
         <div class="login-button">
-      <a href="bestel(particulier).php"> <button type="submit">particulier klik hier</button></a>
+      <a href="bestel(particulier)1.php"> <button type="submit">particulier klik hier</button></a>
    </div>
     </center>
     </div>
