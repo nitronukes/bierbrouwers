@@ -16,14 +16,14 @@ $body = "Naam= $name \r\nBezorgadres= $bezorgadres \r\nBezorgpostcode= $bpostcod
 if(mail(implode(',',$receiver), $subject, $body)){
   echo "<script>alert('bestelling is gelukt, We gaan meteen aan de slag met inpakken, U krijgt ook een bevestiging')</script>";
   ?>
-  <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost/test/bestel(particulier).php">
+  <META HTTP-EQUIV="Refresh" CONTENT="0; URL=https://p21t4.lesonline.nu/bestel(particulier).php">
   <?php
 }else{
   echo "<script>alert('Sorry, bestelling is niet gelukt')</script>";
 }
 
 
-$conn = new mysqli('localhost','root','','biermanagement');
+$conn = new mysqli('localhost','deb85590_p21t4','UtvCWEGA','deb85590_p21t4');
       if($conn->connect_error){
           die('Connection Failed : '.$conn->connect_error);
       }else{

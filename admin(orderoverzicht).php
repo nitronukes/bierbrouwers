@@ -32,8 +32,8 @@ $result = $conn->query($sql);
      <div class="NAV">
       <nav>
         <ul>
-          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
           <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
+          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
         </ul>
       </nav>
     </div>
@@ -80,7 +80,7 @@ if($total!=0){
       <td>".$result['plaats']."</td>
       <td>".$result['aantal']."</td>
       <td>".'€'.$result['totaal']."</td>
-      <td><a href='versturen.php?naam=$result[naam]&aantal=$result[aantal]&email=$result[email]&username=$result[username]&datum=$result[datum]' onclick='return checkdelete()'><input type='submit' value='Versturen' id='deletebtn'></a></td>
+      <td><a href='versturen.php?naam=$result[naam]&telef=$result[telef]&aantal=$result[aantal]&email=$result[email]&username=$result[username]&datum=$result[datum]' onclick='return checkdelete()'><input type='submit' value='Versturen' id='deletebtn'></a></td>
       </tr>
       ";
   }

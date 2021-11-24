@@ -142,8 +142,8 @@ nav a {
      <div class="NAV">
       <nav>
         <ul>
-          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li>
           <li>  <a href="admin(orderoverzicht).php">Orderoverzicht</a></li>
+          <li>  <a href="admin(accountmanage)klantoverzicht.php">Klantoverzicht</a></li> 
         </ul>
       </nav>
     </div>
