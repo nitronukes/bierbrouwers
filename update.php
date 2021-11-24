@@ -86,7 +86,7 @@ $data = mysqli_query($conn,$query);
 if($data){
     echo "<script>alert('gegevens opgeslagen')</script>";
     ?>
-    <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost/test/admin(accountmanage)klantoverzicht.php">
+    <META HTTP-EQUIV="Refresh" CONTENT="0; URL=https://p21t4.lesonline.nu/admin(accountmanage)klantoverzicht.php">
     <?php
 }else{
     echo "<script>alert('Het is niet gelukt om uw gegevens te wijzigen, Probeer later opnieuw')</script>";
