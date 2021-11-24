@@ -1,4 +1,14 @@
 <?php
+
+if(isset($_post['loguit'])){
+  session_destroy();
+  header('location: mainphp.php');
+}
+
+
+
+
+
 include 'conn.php';
 
 $sql=" SELECT * FROM bestel";
@@ -17,7 +27,7 @@ $result = $conn->query($sql);
 
 <header>
     <div class="login-button">
-      <a href="mainphp.php"> <button type="submit">loguit</button></a>
+    <button type="submit" name="loguit">loguit</button></a>
    </div>
      <div class="NAV">
       <nav>
