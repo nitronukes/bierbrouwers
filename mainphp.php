@@ -37,6 +37,7 @@
        $password = "UtvCWEGA";
        $dbname = "deb85590_p21t4";
 
+
        // Create connection
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -47,72 +48,26 @@ if ($conn->connect_error) {
 if (isset($_POST['submit'])) {
     $un=$_POST['username'];
     $pw=$_POST['password'];
-    
-      if($un=='Admin' AND $pw=='Admin'){
-        header("location:admin(orderoverzicht).php");
-        exit();    
+      
+        if($un=='Admin' AND $pw=='Admin'){
+          header("location:admin(orderoverzicht).php");
+          exit();    
+      }
+  
+        $sql = "SELECT * FROM `adminaccountmanage` WHERE `username` = '".$un."' AND `password` = '".$pw."'";
+        $result = $conn->query($sql);
+  
+      if ($result->num_rows > 0) {
+          $_SESSION['username'] = $username;
+          header("location:bestel(zakelijk).php");
+          exit();
+      }
+      else{
+          echo  "<script>alert('gebruiksnaam en wachtwoord kloppen niet, Probeer opnieuw')</script>";
+        }
     }
-
-      $sql = "SELECT `username`, `password` FROM `adminaccountmanage` WHERE `username` = '".$un."' AND `password` = '".$pw."'";
-      $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-    // succes   if ($pw==$row["password"]) {
-            
-            header("location:bestel(zakelijk).php");
-            exit();
-            
-    }
-    else{
-    // failed  
+    $conn->close();
     
-        echo  "<script>alert('gebruiksnaam en wachtwoord kloppen niet, Probeer opnieuw')</script>";  
-            
-        
-        
-    }
-}
-$conn->close();
-
-
-
-      
-    //     $result = mysqli_($conn, 'SELECT * FROM `users');
-    //     $result = mysqli_fetch_assoc($result)
-    //    print_r($result);
-    //    echo 'hoihoi';
-    // $stmt = $conn->prepare($sql);
-    // $stmt->bind_param('ss', $un, $pw);
-    // $stmt->execute();
-    // $stmt = $stmt->get_results();
-    // echo $stmt->error;
-      
-    //   if (mysqli_num_rows($result) > 0) {
-    //     // output data of each row
-    //     while($row = mysqli_fetch_assoc($result)) {
-    //         echo " - Name: " . $row["username"]. " " . $row["password"].  "<br>";
-    //     }
-    //    else {
-    //     echo "0 results";
-    //   }
-      
-      
-      
-      
-    //   if ($pw==$row["password"]) {
-    //       header("location:bestel(zakelijk).html");
-    //       exit();
-    //     }
-    //     else {
-    //     echo  "<script>alert('invalid password')</script>";  
-        
-    // }
-    // else
-    //     echo  "<script>alert('invalid username')</script>";  
-    
-    
-    // mysqli_close($conn);
-      
 ?>
 
 
