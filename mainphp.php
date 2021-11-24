@@ -23,6 +23,10 @@
         <h2>wilt u een account maken?</h2>
     
         neem dan nu contact met ons op de email banditappletje@gmail.com of bel ons 0611264386
+
+        <div class="login-button">
+      <a href="bestel(particulier).php"> <button type="submit">particulier klik hier</button></a>
+   </div>
     </center>
     </div>
 </body>
@@ -31,7 +35,7 @@
        $servername = "localhost";
        $username = "deb85590_p21t4";
        $password = "UtvCWEGA";
-       $dbname = "biermanagement";
+       $dbname = "deb85590_p21t4";
 
        // Create connection
 // Create connection
