@@ -29,10 +29,14 @@
               $stmt = $conn->prepare($INSERT);
               $stmt->bind_param("ssssssssss",$bedrijfsnaam,$naam,$telef,$email,$bezorgadres,$bpostcode,$factuuradres,$fpostcode,$username,$password);
               $stmt->execute();
-              echo "Het is gelukt om een account te maken";
+              echo "<script>alert('Het is gelukt om een account te maken')</script>";
+              ?>
+              <META HTTP-EQUIV="Refresh" CONTENT="0; URL=https://p21t4.lesonline.nu/admin(accountmanage)klantoverzicht.php">
+              <?php
           }else{
               echo "Er bestaat al een account met dit username '$username', Probeer later opnieuw";
           }
           $stmt->close();
           $conn->close();
       }
+      ?>
