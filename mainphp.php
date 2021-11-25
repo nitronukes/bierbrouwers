@@ -33,9 +33,9 @@
 </html>
 <?php
        $servername = "localhost";
-       $username = "deb85590_p21t4";
-       $password = "UtvCWEGA";
-       $dbname = "deb85590_p21t4";
+       $username = "root";
+       $password = "";
+       $dbname = "biermanagement";
 
        // Create connection
 // Create connection
