@@ -1,14 +1,4 @@
 <?php
-
-if(isset($_POST['loguit'])){
-  session_destroy();
-  header('Location: mainphp.php');
-}
-
-
-
-
-
 include 'conn.php';
 
 $sql=" SELECT * FROM bestel";
@@ -27,7 +17,7 @@ $result = $conn->query($sql);
 
 <header>
 <form method='POST' action=""> 
- <input type="submit" name="loguit">loguit</input>
+ <input name="loguit">loguit</input>
     </form> 
      <div class="NAV">
       <nav>
@@ -59,6 +49,10 @@ $result = $conn->query($sql);
             <th>Totaalbedrag</th>
             </tr>
 <?php
+if(isset($_POST['loguit'])){
+  session_destroy();
+  header('Location: mainphp.php');
+}
 include("conn.php");
 error_reporting(0);
 $query= "SELECT * FROM bestel";
