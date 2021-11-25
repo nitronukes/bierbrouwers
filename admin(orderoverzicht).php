@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 
 <header>
 <form method='POST' action=""> 
- <input type="inloggen" name="loguit">loguit</input>
+ <input type="submit" name="loguit">loguit</input>
     </form> 
      <div class="NAV">
       <nav>
