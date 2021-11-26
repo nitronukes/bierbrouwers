@@ -9,7 +9,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bestel</title>
-
+<style>
+  .container1 {
+      border-radius: 5px;
+      width: 50%;
+      border-style: solid;
+      margin: 10px;
+      width: 40%;
+      float: left;
+    }
+  .container2 {
+      border-radius: 5px;
+      border-style: solid;
+      margin: 10px;
+      float: left;
+      width: 40%;
+    }
+    .container3 {
+      border-radius: 5px;
+      width: 40%;
+      border-style: solid;
+      margin-left: 50px;
+      float: left;
+      padding: 10px;
+    }
+    table {
+    width:40%;
+    margin-left:50px;
+  }
+  table, th, td {
+    border: 3px solid;
+  }
+  
+  th, td {
+    text-align: center;
+    font-size:16px;
+  }
+  th {
+    background-color: #00ff15;
+  }
+</style>
 </head>
 <body>
   <header>
@@ -20,19 +59,11 @@
 
   </header>
 
-<div class="container1">
-
-  <h1>Appel Bandit</h1>
-
-  <img src="https://media.foox.nl/FT/AFB/high/35033.jpg" id="besimg">
-
-  <p class="prijs">€1.75 per fles <strong>excl BTW.</strong></p>
-
-  <form method="GET"><p id="pp"><strong>Max 24</strong> flesjes per order <input type="number" name="aantal" placeholder="aantal" min="1" max="24" required></P>
-  <button type="submit" class="sub" value="Aantal Bevestigen">Aantal Bevestigen</button>
-</form>
+<div class="container2">
+  <h1 id="pp">Bezorgkosten</h1>
+  <p id="pp">Onder €25 = €7.50</p>
+  <p id="pp">Vanaf €25 = €5.00</p>
 </div>
-
 <br>
 <br>
 <br>
@@ -65,36 +96,43 @@
 <br>
 <br>
 <br>
+<div class="container1">
 
-<div class="container2">
-  <h1 id="pp">Bezorgkosten</h1>
-  <p id="pp">Onder €25 = €7.50</p>
-  <p id="pp">Vanaf €25 = €5.00</p>
+  <h1>Appel Bandit</h1>
+
+  <img src="https://media.foox.nl/FT/AFB/high/35033.jpg" id="besimg">
+
+  <p class="prijs">€1.75 per fles <strong>excl BTW.</strong></p>
+
+  <form action="" method="GET"><p id="pp"><strong>Max 24</strong> flesjes per order <input type="number" name="aantal" placeholder="aantal" min="1" max="24" required></P>
+  <button type="submit" class="sub" value="Aantal Bevestigen">Aantal Bevestigen</button></form>
 </div>
+
+
 
 
 
 <div class="container3">
 
 <form action="form.php" method="POST">
-  <label>Naam:</label> 
-  <input name="name" type="text" class="formc" placeholder="Uw Naam" required>
+  <br><label>Naam:</label> 
+  <input name="name" type="text" class="formc" placeholder="Uw Naam" maxlength="15" required>
   <br><br>
   <label>Adres:</label> 
-  <input name="bezorgadres" type="text" class="formc" placeholder="Uw Adres" required>
+  <input name="bezorgadres" type="text" class="formc" placeholder="Uw Adres" maxlength="35" required>
   <br><br>
   <label>Postcode:</label> 
-  <input name="bpostcode" type="text" class="formc" placeholder="Uw Postcode" required>
+  <input name="bpostcode" type="text" class="formc" placeholder="Uw Postcode" maxlength="8" required>
   <br><br>
   <label>Plaats:</label> 
-  <input name="plaats" type="text" class="formc" placeholder="Uw Plaats" required>
+  <input name="plaats" type="text" class="formc" placeholder="Uw Plaats" maxlength="15" required>
   <br><br>
   <input type="date" name="datum" id="datePickerId"hidden>
   <label>Emailadres:</label> 
-  <input name="email" type="email" class="formc" placeholder="Uw Emailadres" required>
+  <input name="email" type="email" class="formc" placeholder="Uw Emailadres" maxlength="30" required>
   <br><br>
   <label>Telefoonnummer:</label> 
-  <input name="telef" type="tel" class="formc" placeholder="Uw Telefoonnummer" required>
+  <input name="telef" type="tel" class="formc" placeholder="Uw Telefoonnummer" maxlength="12" required>
   <br><br>
   <input name="aantal" value="<?php echo $aantal;?>" hidden>
   <input name="totaal" value="<?php echo round($totaal, 2);?>" hidden>
