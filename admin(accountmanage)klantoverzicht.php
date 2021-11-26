@@ -97,7 +97,7 @@ caption {
     font-weight:bold ;
   }  
   header{
-    background-color: rgb(46, 35, 35);
+    background-color: rgb(0, 0, 0);
   }
 
  .NAV {
@@ -115,13 +115,12 @@ nav li {
   display: inline-flex;
   margin-right: 50px;
   margin-left: 100px;
-  margin-bottom: 5px;
 }
 
 nav a {
   float: left;
   display: block;
-  color: #ffffff;
+  color: yellow;
   text-align: center;
   padding: 14px 30px;
   text-decoration: none;
@@ -133,6 +132,13 @@ nav a {
   text-align: center;
   }  
   
+  @media all and (max-width:30em){
+    input.button1{
+      display:block;
+      margin:0.2em auto;
+    }
+  }
+
   </style>
 </head>
 <header>

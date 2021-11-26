@@ -81,9 +81,9 @@ nav a {
   
 </style>
 <header>
-    <div class="login-button">
-      <a href="mainphp.php"> <button type="submit">loguit</button></a>
-   </div>
+<form method='POST' action=""> 
+ <input type="submit" name="loguit">loguit</input>
+    </form> 
      <div class="NAV">
       <nav>
         <ul>
@@ -113,6 +113,10 @@ nav a {
             <th>Totaalbedrag</th>
             </tr>
 <?php
+if(isset($_POST['loguit'])){
+  session_destroy();
+  header('Location: mainphp.php');
+}
 include("conn.php");
 error_reporting(0);
 $query= "SELECT * FROM bestel";

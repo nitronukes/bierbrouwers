@@ -33,9 +33,15 @@
 </html>
 <?php
        $servername = "localhost";
+<<<<<<< Updated upstream
+       $username = "root";
+       $password = "";
+       $dbname = "biermanagement";
+=======
        $username = "deb85590_p21t4";
        $password = "UtvCWEGA";
        $dbname = "deb85590_p21t4";
+>>>>>>> Stashed changes
 
        // Create connection
 // Create connection
