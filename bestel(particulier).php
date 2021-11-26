@@ -88,6 +88,11 @@
   <br><br>
   <label>Plaats:</label> 
   <input name="plaats" type="text" class="formc" placeholder="Uw Plaats" required>
+
+
+
+
+  
   <br><br>
   <input type="date" name="datum" id="datePickerId"hidden>
   <label>Emailadres:</label> 
