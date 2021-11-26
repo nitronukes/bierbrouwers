@@ -12,9 +12,74 @@ $result = $conn->query($sql);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin(accountmanage)</title>
-  <link rel="stylesheet" href="main.css">
 </head>
+<style>
+    header{
+    background-color: rgb(46, 35, 35);
+  }
 
+ .NAV {
+    position: relative;
+    display: flex;
+  }
+  
+  ul {
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+  }
+  
+nav li {
+  display: inline-flex;
+  margin-right: 50px;
+  margin-left: 100px;
+  margin-bottom: 5px;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+  .login-button {
+  float: right;
+  text-align: center;
+  }
+  table {
+    width:100%;
+  }
+  table, th, td {
+    border: 3px solid;
+  }
+  .table th, .table td { 
+    text-align: center; 
+    padding: 0.25em;
+    font-size:16px;
+  }
+  th {
+    background-color: yellow;
+  }
+  caption {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+    font-size:30px;
+    font-weight:bold ;
+  } 
+  #deletebtn{
+    background-color:red;
+    color:white;
+    width:120px;
+    height:25px;
+    font-size:18px
+}
+  
+</style>
 <header>
 <form method='POST' action=""> 
  <input type="submit" name="loguit">loguit</input>
@@ -33,11 +98,10 @@ $result = $conn->query($sql);
 <body>
   <table class="center">
     <caption>Orderoverzicht</caption>
-    <div>
         <tr>
             <th>Bedrijfsnaam</th>
             <th>Naam</th>
-            <th>telnr</th>
+            <th>Telnr</th>
             <th>Emailadres</th>
             <th>Bezorgadres</th>
             <th>bezorgpostcode</th>

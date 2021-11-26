@@ -13,7 +13,12 @@ $username = $_GET['username'];
 
 $receiver = array($email, 'banditappletje@gmail.com');
 $subject="Uw bestelling is verzonden";
-$body = "Uw bestelling op $datum voor $aantal bier is onderweg, u krijgt het binnen 2-3 werkdagen";
+$body = "Beste $naam, \r\nUw bestelling op $datum voor $aantal bier is onderweg
+U krijgt het binnen 2-3 werkdagen.
+Veel plezier!
+
+Met vriendelijke groet,
+Bierbrouwer de Boer";
 
 if(mail(implode(',',$receiver), $subject, $body)){
   ?>
