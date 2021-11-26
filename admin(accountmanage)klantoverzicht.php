@@ -155,13 +155,13 @@ nav a {
     <tr>
         <th>Bedrijfsnaam</th>
         <th>Naam</th>
-        <th>telnr</th>
+        <th>Telnr</th>
         <th>Emailadres</th>
         <th>Bezorgadres</th>
         <th>postcode</th>
         <th>Username</th>
         <th colspan="2" align="center">Wijzigen/Verwijderen</th>
-        </tr>
+    </tr>
 <?php
 include("conn.php");
 error_reporting(0);
@@ -182,6 +182,7 @@ if($total!=0){
         <td>".$result['username']."</td>
         <td><a href='update.php?bedrijfsnaam=$result[bedrijfsnaam]&naam=$result[naam]&telef=$result[telef]&email=$result[email]&bezorgadres=$result[bezorgadres]&bpostcode=$result[bpostcode]&username=$result[username]'><input type='submit' value='Wijzigen' id='editbtn'></a></td>
         <td><a href='delete.php?username=$result[username]' onclick='return checkdelete()'><input type='submit' value='Verwijderen' id='deletebtn'></a></td>
+        </tr>
         ";
     }
 }else{
@@ -197,17 +198,17 @@ if($total!=0){
   <table>
     <td class="cof" style="right:30px;top:100px">
     <form action="admin(accountmanage)klantenmaken.php" method="POST">
-     <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" required></p>
-     <p>Naam:  <input type="text" id="name" name="naam" placeholder="Uw naam" required></p>
-     <p>Telefoonnummer: <input type="tel" id="phone" name="telef" placeholder="Uw telefoonnummer" required></p>
-     <P>Emailadres: <input type="text" id="email" name="email" placeholder="Uw Emailadres" required></P>
-     <p>Bezorgadres: <input type="text" name="bezorgadres" placeholder="Uw bezorgadres" required></p>
-     <p>Postcode: <input type="text" name="bpostcode"placeholder="Uw bezorgpostcode" required></p>
-     <p>Factuuradres: <input type="text" name="factuuradres"placeholder="Uw factuuradres" required></p>
-     <p>Postcode: <input type="text" name="fpostcode" placeholder="Uw factuurpostcode" required></p>
+     <p>Bedrijfsnaam:  <input type="text" id="name" name="bedrijfsnaam" placeholder="Uw bedrijfsnaam" maxlength="15" required></p>
+     <p>Naam:  <input type="text" id="name" name="naam" placeholder="Uw naam" maxlength="15" required></p>
+     <p>Telefoonnummer: <input type="tel" id="phone" name="telef" placeholder="Uw telefoonnummer" maxlength="12" required></p>
+     <P>Emailadres: <input type="text" id="email" name="email" placeholder="Uw Emailadres" maxlength="30" required></P>
+     <p>Bezorgadres: <input type="text" name="bezorgadres" placeholder="Uw bezorgadres" maxlength="35" required></p>
+     <p>Postcode: <input type="text" name="bpostcode"placeholder="Uw bezorgpostcode" maxlength="8" required></p>
+     <p>Factuuradres: <input type="text" name="factuuradres"placeholder="Uw factuuradres" maxlength="35" required></p>
+     <p>Postcode: <input type="text" name="fpostcode" placeholder="Uw factuurpostcode" maxlength="8" required></p>
      <p>................................................................................................</p>
-     <p>Username: <input type="text" id="username" name="username" placeholder="Uw gebruiksnaam" required></p>
-     Password: <input type="password" id="myInput" name="password" placeholder="Uw wachtwoord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+     <p>Username: <input type="text" id="username" name="username" placeholder="Uw gebruiksnaam" maxlength="15" required></p>
+     Password: <input type="password" id="myInput" name="password" placeholder="Uw wachtwoord" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
      <i><input type="checkbox" onclick="myFunction()">Show password</p><i>(minimaal een Hoofdletter, kleineletter, en een cijfer, en minimaal 8 karakters)</i>
     <br><input type="submit" value="Account aanmaken" class="button1">
      </form>
