@@ -11,7 +11,12 @@ $totaal = $_POST['totaal'];
 
 $receiver = array($email, 'banditappletje@gmail.com');
 $subject="bestelling";
-$body = "Naam= $name \r\nBezorgadres= $bezorgadres \r\nBezorgpostcode= $bpostcode \r\nPlaats= $plaats \r\nDatum= $datum \r\nE mailadres= $email \r\nTelefoonnr= $telef \r\nAantal bier=$aantal \r\nTotaalbedrag=$totaal";
+$body = "Beste $name, wij hebben bestelling binnen\r\n
+Naam= $name \r\nBezorgadres= $bezorgadres \r\nBezorgpostcode= $bpostcode \r\nPlaats= $plaats \r\nE mailadres= $email \r\nTelefoonnr= $telef \r\nAantal bier=$aantal \r\nTotaalbedrag=$totaal
+
+Met de gegevens hierboven, gaan we meteen aan de slag met inpakken, zodra het verzonden is, krijgt u een mail daarvan.\r\n
+Met vriendelijke groet,
+Bierbrouwer de Boer";
 
 if(mail(implode(',',$receiver), $subject, $body)){
   echo "<script>alert('bestelling is gelukt, We gaan meteen aan de slag met inpakken, U krijgt ook een bevestiging')</script>";
